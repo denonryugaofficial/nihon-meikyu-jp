@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Basic SEO -->
+<title>日本迷宮 – Nihon Meikyū | 日本の美しさを巡る旅</title>
+<meta name="description" content="日本迷宮 – Nihon Meikyū は、日本の有名な場所、秘境、文化、食、自然を写真と物語で巡るウェブサイトです。四季の美しさと日本の魅力を丁寧に紹介します。">
+<meta name="keywords" content="日本, Japan, 旅行, 観光, 有名な場所, 秘境, 日本文化, 日本の自然, 日本の食文化, ギャラリー, 日本迷宮">
+<meta name="author" content="Den’on">
+<meta name="language" content="ja">
+
+<!-- Open Graph (Social Media Preview) -->
+<meta property="og:title" content="日本迷宮 – Nihon Meikyū">
+<meta property="og:description" content="写真で巡る日本の美しい瞬間。四季、文化、自然、食、秘境を丁寧に紹介。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://your-domain-here.com">
+<meta property="og:image" content="https://your-domain-here.com/images/og-preview.jpg">
+<meta property="og:site_name" content="日本迷宮 – Nihon Meikyū">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="日本迷宮 – Nihon Meikyū">
+<meta name="twitter:description" content="日本の美しさを写真で巡る旅へ。">
+<meta name="twitter:image" content="https://your-domain-here.com/images/og-preview.jpg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="images/favicon.png">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本迷宮 – 静寂の中にある日本の美</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- THEME POPUP -->
+<div id="theme-popup" class="theme-popup">
+    <div class="theme-popup-box">
+        <h2>表示モードを選択</h2>
+        <p>お好みの雰囲気で日本迷宮をお楽しみください。</p>
+
+        <div class="theme-options">
+            <button id="light-choice" class="theme-btn light">🌞 光モード</button>
+            <button id="dark-choice" class="theme-btn dark">🌙 影モード</button>
+        </div>
+    </div>
+</div>
+
+<!-- FLOATING TOGGLE -->
+<div id="theme-toggle" class="theme-toggle">
+    <span id="toggle-light">🌞</span>
+    <span id="toggle-dark">🌙</span>
+</div>
+
+<!-- GLOBAL THEME LOADER -->
+<script>
+(function() {
+    const saved = localStorage.getItem("theme") || "light";
+    document.documentElement.setAttribute("data-theme", saved);
+})();
+</script>
+
+<header>
+    <a href="index.html" class="logo">日本迷宮</a>
+    <nav>
+        <a href="famous.html">有名な場所</a>
+        <a href="hidden.html">秘境・穴場</a>
+        <a href="gallery.html">ギャラリー</a>
+        <a href="about.html">日本について</a>
+    </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero home-hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+        <h1>日本迷宮</h1>
+        <p>日本の美しさを、静かに巡る旅へ。</p>
+        <a href="famous.html" class="hero-btn">探索を始める</a>
+    </div>
+</section>
+
+<!-- NAVIGATION CARDS -->
+<section class="section home-cards">
+    <div class="nav-card">
+        <img src="images/home/famous.jpg" alt="Famous Places">
+        <h3>有名な場所</h3>
+        <p>日本を象徴する名所を巡る旅へ。</p>
+        <a href="famous.html" class="card-btn">見る</a>
+    </div>
+
+    <div class="nav-card">
+        <img src="images/home/hidden.jpg" alt="Hidden Spots">
+        <h3>秘境・穴場</h3>
+        <p>まだ知られていない日本の深い魅力。</p>
+        <a href="hidden.html" class="card-btn">見る</a>
+    </div>
+
+    <div class="nav-card">
+        <img src="images/home/gallery.jpg" alt="Gallery">
+        <h3>ギャラリー</h3>
+        <p>写真で巡る日本の美しい瞬間。</p>
+        <a href="gallery.html" class="card-btn">見る</a>
+    </div>
+</section>
+
+<!-- DISCOVER MORE -->
+<section class="section alt discover-more">
+    <h2>もっと知る – Discover More</h2>
+
+    <div class="discover-grid">
+        <a href="festivals.html" class="discover-card">
+            <h3>祭り – Festivals</h3>
+            <p>日本各地の伝統行事を紹介。</p>
+        </a>
+
+        <a href="food-culture.html" class="discover-card">
+            <h3>食文化 – Food Culture</h3>
+            <p>四季と地域が生む豊かな味。</p>
+        </a>
+
+        <a href="history.html" class="discover-card">
+            <h3>歴史 – History Timeline</h3>
+            <p>日本の時代をわかりやすく解説。</p>
+        </a>
+
+        <a href="hidden-stories.html" class="discover-card">
+            <h3>秘境・物語 – Hidden Stories</h3>
+            <p>まだ知られていない日本の魅力。</p>
+        </a>
+
+        <!-- NEW JAPANESE COURSE CARD -->
+        <a href="learn-japanese/index.html" class="discover-card">
+            <h3>日本語を学ぶ – Learn Japanese</h3>
+            <p>基礎から古典まで、無料で学べる日本語コース。</p>
+        </a>
+    </div>
+</section>
+
+<!-- ABOUT TEASER -->
+<section class="section alt about-teaser">
+    <h2>日本について</h2>
+    <p>
+        日本は、古き良き文化と豊かな自然が息づく国。<br>
+        四季の移ろいとともに、無数の物語が紡がれています。
+    </p>
+    <a href="about.html" class="about-btn">もっと見る</a>
+</section>
+
+<footer>
+    <p>© 2026 日本迷宮 – Nihon Meikyū</p>
+</footer>
+
+<!-- THEME SYSTEM -->
+<script>
+// Show popup only on first visit
+window.addEventListener("DOMContentLoaded", () => {
+    const popup = document.getElementById("theme-popup");
+    const toggle = document.getElementById("theme-toggle");
+
+    const saved = localStorage.getItem("theme");
+
+    if (!saved) {
+        popup.style.display = "flex";
+    } else {
+        toggle.style.display = "flex";
+    }
+
+    // Popup buttons
+    const lightBtn = document.getElementById("light-choice");
+    const darkBtn = document.getElementById("dark-choice");
+
+    if (lightBtn) {
+        lightBtn.onclick = () => setTheme("light", popup, toggle);
+        darkBtn.onclick = () => setTheme("dark", popup, toggle);
+    }
+
+    // Floating toggle
+    const toggleLight = document.getElementById("toggle-light");
+    const toggleDark = document.getElementById("toggle-dark");
+
+    toggleLight.onclick = () => setTheme("light");
+    toggleDark.onclick = () => setTheme("dark");
+});
+
+function setTheme(mode, popup, toggle) {
+    document.documentElement.setAttribute("data-theme", mode);
+    localStorage.setItem("theme", mode);
+
+    if (popup) popup.style.display = "none";
+    if (toggle) toggle.style.display = "flex";
+}
+</script>
+
+<!-- ===== JAPANESE FLOWER ENGINE (THEME-AWARE VERSION) ===== -->
+<script>
+// Map months (0–11) to seasonal primary flowers
+const seasonalFlowers = [
+    "tsubaki", "tsubaki", "ume", "sakura", "sakura", "ajisai",
+    "himawari", "himawari", "cosmos", "kiku", "kiku", "ume"
+];
+
+// Page-based secondary flower
+function getPageFlower() {
+    const path = window.location.pathname;
+    if (path.includes("famous")) return "kiku";
+    if (path.includes("hidden")) return "fuji";
+    if (path.includes("gallery")) return "ajisai";
+    if (path.includes("about")) return "ume";
+    return "sakura";
+}
+
+// Flower definitions (with darkColor variants)
+const flowerTypes = {
+    sakura:  { color: "#f9c4d2", darkColor: "#d8a8c0", sizeMin: 0.6, sizeMax: 1.2, shape: "circle" },
+    ume:     { color: "#f7e9f0", darkColor: "#d6c8d8", sizeMin: 0.6, sizeMax: 1.1, shape: "circle" },
+    tsubaki: { color: "#c0392b", darkColor: "#8a2a20", sizeMin: 0.7, sizeMax: 1.3, shape: "round" },
+    fuji:    { color: "#b39ddb", darkColor: "#8e7cc4", sizeMin: 0.5, sizeMax: 1.0, shape: "teardrop" },
+    ajisai:  { color: "#8faadc", darkColor: "#6f88b8", sizeMin: 0.4, sizeMax: 0.9, shape: "cluster" },
+    himawari:{ color: "#f4d03f", darkColor: "#c9a82f", sizeMin: 0.5, sizeMax: 1.0, shape: "oval" },
+    kiku:    { color: "#f5c469", darkColor: "#c9a257", sizeMin: 0.5, sizeMax: 1.0, shape: "spiky" },
+    cosmos:  { color: "#f1948a", darkColor: "#c67a72", sizeMin: 0.5, sizeMax: 1.0, shape: "circle" }
+};
+
+// Create a single flower element
+function createFlower(typeKey) {
+    const type = flowerTypes[typeKey] || flowerTypes.sakura;
+    const flower = document.createElement("div");
+    flower.classList.add("flower");
+
+    // Random horizontal start
+    flower.style.left = Math.random() * 100 + "vw";
+
+    // Depth / size
+    const scale = type.sizeMin + Math.random() * (type.sizeMax - type.sizeMin);
+    flower.style.transform = `scale(${scale})`;
+
+    // THEME-AWARE COLOR
+    const theme = document.documentElement.getAttribute("data-theme");
+    flower.style.background = theme === "dark" ? (type.darkColor || type.color) : type.color;
+
+    // Rotation
+    flower.style.setProperty("--rotation", Math.random() * 360 + "deg");
+
+    // Duration
+    flower.style.animationDuration = (4 + Math.random() * 6) + "s";
+
+    // Opacity
+    flower.style.opacity = 0.4 + Math.random() * 0.6;
+
+    // Rare glow
+    if (Math.random() < 0.08) {
+        flower.classList.add("glow");
+    }
+
+    // Shape variations
+    switch (type.shape) {
+        case "oval": flower.style.borderRadius = "50% 35% 50% 35%"; break;
+        case "teardrop": flower.style.borderRadius = "50% 50% 50% 10%"; break;
+        case "round": flower.style.borderRadius = "50%"; break;
+        case "spiky": flower.style.boxShadow = `0 0 0 2px ${type.color}`; break;
+        case "cluster": flower.style.boxShadow = `-4px -2px 0 ${type.color}, 4px 2px 0 ${type.color}`; break;
+        default: flower.style.borderRadius = "50%";
+    }
+
+    document.body.appendChild(flower);
+
+    setTimeout(() => flower.remove(), 10000);
+}
+
+// Main engine
+(function startFlowerEngine() {
+    const month = new Date().getMonth();
+    const seasonal = seasonalFlowers[month] || "sakura";
+    const pageFlower = getPageFlower();
+
+    function spawnNormal() {
+        const useSeasonal = Math.random() < 0.7;
+        const type = useSeasonal ? seasonal : pageFlower;
+        createFlower(type);
+    }
+
+    function spawnGust() {
+        const count = 3 + Math.floor(Math.random() * 5);
+        for (let i = 0; i < count; i++) {
+            const keys = Object.keys(flowerTypes);
+            const randomExtra = keys[Math.floor(Math.random() * keys.length)];
+            const pool = [seasonal, pageFlower, randomExtra];
+            const type = pool[Math.floor(Math.random() * pool.length)];
+            setTimeout(() => createFlower(type), i * 120);
+        }
+    }
+
+    setInterval(() => {
+        const gust = Math.random() < 0.18;
+        gust ? spawnGust() : spawnNormal();
+    }, 450);
+})();
+</script>
+
+</body>
+</html>

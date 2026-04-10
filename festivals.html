@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>祭り – Festivals | 日本迷宮</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">日本迷宮</a>
+            <ul class="nav-links">
+                <li><a href="famous.html">有名な場所</a></li>
+                <li><a href="hidden.html">秘境・穴場</a></li>
+                <li><a href="gallery.html">ギャラリー</a></li>
+                <li><a href="about.html">日本について</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero famous-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+            <h1>祭り – Matsuri</h1>
+            <p>日本の伝統と季節を彩る文化行事</p>
+        </div>
+    </section>
+
+    <!-- PAGE WRAPPER -->
+    <div class="page-wrapper">
+
+        <!-- INTRO -->
+        <section class="section">
+            <h2>祭り – Festivals of Japan</h2>
+            <p>
+                日本の祭り（祭り・まつり）は、神道や仏教の伝統に深く根ざした文化行事です。
+                多くは地域の神々への感謝、豊作祈願、季節の移ろいを祝う目的で行われます。
+                日本全国では年間10万以上の祭りが開催され、神輿（みこし）の巡行や伝統芸能が街を彩ります。
+            </p>
+        </section>
+
+        <!-- FEATURES -->
+        <section class="section alt">
+            <h3>祭りの特徴</h3>
+            <p>
+                「祭り」という言葉には「祝う」「神をまつる」という意味があり、
+                地域の信仰や歴史が色濃く反映されています。多くの祭りでは、
+                神輿（みこし）を担いで街を練り歩き、太鼓や笛の音が響き渡ります。
+                これらの行事は地域の絆を深め、伝統を次世代へ受け継ぐ重要な役割を果たしています。
+            </p>
+        </section>
+
+        <!-- NATIONAL FESTIVALS -->
+        <section class="section">
+            <h3>全国的に知られる主な祭り</h3>
+            <ul>
+                <li><strong>成人の日（1月）</strong> – 新成人を祝う全国行事。</li>
+                <li><strong>ひな祭り（3月3日）</strong> – 女の子の健やかな成長を願う伝統行事。</li>
+                <li><strong>花見（3〜5月）</strong> – 桜を愛でる日本の春の象徴。</li>
+                <li><strong>七夕（7月7日）</strong> – 願い事を短冊に書いて飾る行事。</li>
+                <li><strong>お盆（8月）</strong> – 先祖を迎える日本の大切な行事。</li>
+                <li><strong>七五三（11月15日）</strong> – 子どもの成長を祝う伝統行事。</li>
+                <li><strong>大晦日（12月31日）</strong> – 一年の締めくくりを祝う行事。</li>
+            </ul>
+        </section>
+
+        <!-- REGIONAL FESTIVALS -->
+        <section class="section alt">
+            <h3>地域を代表する有名な祭り</h3>
+            <p>日本各地には、その土地ならではの伝統と迫力を感じられる祭りが数多く存在します。</p>
+
+            <ul>
+                <li><strong>祇園祭（京都）</strong> – 日本三大祭りの一つ。豪華な山鉾巡行が圧巻。</li>
+                <li><strong>札幌雪まつり（北海道）</strong> – 巨大な雪像と氷像が並ぶ冬の祭典。</li>
+                <li><strong>青森ねぶた祭り（東北）</strong> – 光り輝く巨大な武者人形の山車が街を練り歩く。</li>
+                <li><strong>神田祭（東京）</strong> – 江戸の伝統を受け継ぐ壮大な神輿行列。</li>
+                <li><strong>阿波おどり（徳島）</strong> – 日本を代表する伝統舞踊の祭り。</li>
+            </ul>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 日本迷宮 - Nihon Meikyū</p>
+    </footer>
+
+
+
+<!-- ===== JAPANESE FLOWER ENGINE (THEME-AWARE VERSION) ===== -->
+<script>
+// Map months (0–11) to seasonal primary flowers
+const seasonalFlowers = [
+    "tsubaki", "tsubaki", "ume", "sakura", "sakura", "ajisai",
+    "himawari", "himawari", "cosmos", "kiku", "kiku", "ume"
+];
+
+// Page-based secondary flower
+function getPageFlower() {
+    const path = window.location.pathname;
+    if (path.includes("famous")) return "kiku";
+    if (path.includes("hidden")) return "fuji";
+    if (path.includes("gallery")) return "ajisai";
+    if (path.includes("about")) return "ume";
+    return "sakura";
+}
+
+// Flower definitions (with darkColor variants)
+const flowerTypes = {
+    sakura:  { color: "#f9c4d2", darkColor: "#d8a8c0", sizeMin: 0.6, sizeMax: 1.2, shape: "circle" },
+    ume:     { color: "#f7e9f0", darkColor: "#d6c8d8", sizeMin: 0.6, sizeMax: 1.1, shape: "circle" },
+    tsubaki: { color: "#c0392b", darkColor: "#8a2a20", sizeMin: 0.7, sizeMax: 1.3, shape: "round" },
+    fuji:    { color: "#b39ddb", darkColor: "#8e7cc4", sizeMin: 0.5, sizeMax: 1.0, shape: "teardrop" },
+    ajisai:  { color: "#8faadc", darkColor: "#6f88b8", sizeMin: 0.4, sizeMax: 0.9, shape: "cluster" },
+    himawari:{ color: "#f4d03f", darkColor: "#c9a82f", sizeMin: 0.5, sizeMax: 1.0, shape: "oval" },
+    kiku:    { color: "#f5c469", darkColor: "#c9a257", sizeMin: 0.5, sizeMax: 1.0, shape: "spiky" },
+    cosmos:  { color: "#f1948a", darkColor: "#c67a72", sizeMin: 0.5, sizeMax: 1.0, shape: "circle" }
+};
+
+// Create a single flower element
+function createFlower(typeKey) {
+    const type = flowerTypes[typeKey] || flowerTypes.sakura;
+    const flower = document.createElement("div");
+    flower.classList.add("flower");
+
+    // Random horizontal start
+    flower.style.left = Math.random() * 100 + "vw";
+
+    // Depth / size
+    const scale = type.sizeMin + Math.random() * (type.sizeMax - type.sizeMin);
+    flower.style.transform = `scale(${scale})`;
+
+    // THEME-AWARE COLOR
+    const theme = document.documentElement.getAttribute("data-theme");
+    flower.style.background = theme === "dark" ? (type.darkColor || type.color) : type.color;
+
+    // Rotation
+    flower.style.setProperty("--rotation", Math.random() * 360 + "deg");
+
+    // Duration
+    flower.style.animationDuration = (4 + Math.random() * 6) + "s";
+
+    // Opacity
+    flower.style.opacity = 0.4 + Math.random() * 0.6;
+
+    // Rare glow
+    if (Math.random() < 0.08) {
+        flower.classList.add("glow");
+    }
+
+    // Shape variations
+    switch (type.shape) {
+        case "oval": flower.style.borderRadius = "50% 35% 50% 35%"; break;
+        case "teardrop": flower.style.borderRadius = "50% 50% 50% 10%"; break;
+        case "round": flower.style.borderRadius = "50%"; break;
+        case "spiky": flower.style.boxShadow = `0 0 0 2px ${type.color}`; break;
+        case "cluster": flower.style.boxShadow = `-4px -2px 0 ${type.color}, 4px 2px 0 ${type.color}`; break;
+        default: flower.style.borderRadius = "50%";
+    }
+
+    document.body.appendChild(flower);
+
+    setTimeout(() => flower.remove(), 10000);
+}
+
+// Main engine
+(function startFlowerEngine() {
+    const month = new Date().getMonth();
+    const seasonal = seasonalFlowers[month] || "sakura";
+    const pageFlower = getPageFlower();
+
+    function spawnNormal() {
+        const useSeasonal = Math.random() < 0.7;
+        const type = useSeasonal ? seasonal : pageFlower;
+        createFlower(type);
+    }
+
+    function spawnGust() {
+        const count = 3 + Math.floor(Math.random() * 5);
+        for (let i = 0; i < count; i++) {
+            const keys = Object.keys(flowerTypes);
+            const randomExtra = keys[Math.floor(Math.random() * keys.length)];
+            const pool = [seasonal, pageFlower, randomExtra];
+            const type = pool[Math.floor(Math.random() * pool.length)];
+            setTimeout(() => createFlower(type), i * 120);
+        }
+    }
+
+    setInterval(() => {
+        const gust = Math.random() < 0.18;
+        gust ? spawnGust() : spawnNormal();
+    }, 450);
+})();
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+            document.body.setAttribute("data-theme", savedTheme);
+        }
+        <!-- THEME LOADER -->
+    // Show popup only on first visit
+window.addEventListener("DOMContentLoaded", () => {
+    const popup = document.getElementById("theme-popup");
+    const toggle = document.getElementById("theme-toggle");
+
+    const saved = localStorage.getItem("theme");
+
+    if (!saved) {
+        popup.style.display = "flex";
+    } else {
+        toggle.style.display = "flex";
+    }
+
+    // Popup buttons
+    const lightBtn = document.getElementById("light-choice");
+    const darkBtn = document.getElementById("dark-choice");
+
+    if (lightBtn) {
+        lightBtn.onclick = () => setTheme("light", popup, toggle);
+        darkBtn.onclick = () => setTheme("dark", popup, toggle);
+    }
+
+    // Floating toggle
+    const toggleLight = document.getElementById("toggle-light");
+    const toggleDark = document.getElementById("toggle-dark");
+
+    toggleLight.onclick = () => setTheme("light");
+    toggleDark.onclick = () => setTheme("dark");
+});
+
+function setTheme(mode, popup, toggle) {
+    document.documentElement.setAttribute("data-theme", mode);
+    localStorage.setItem("theme", mode);
+
+    if (popup) popup.style.display = "none";
+    if (toggle) toggle.style.display = "flex";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本語を学ぶ – Learn Japanese | 日本迷宮</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- GLOBAL THEME LOADER -->
+<script>
+(function() {
+    const saved = localStorage.getItem("theme") || "light";
+    document.documentElement.setAttribute("data-theme", saved);
+})();
+</script>
+
+<header>
+    <a href="../index.html" class="logo">日本迷宮</a>
+    <nav>
+        <a href="../famous.html">有名な場所</a>
+        <a href="../hidden.html">秘境・穴場</a>
+        <a href="../gallery.html">ギャラリー</a>
+        <a href="../about.html">日本について</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero about-hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+        <h1>日本語を学ぶ – Learn Japanese</h1>
+        <p>基礎から古典まで、無料で学べる日本語コース。</p>
+    </div>
+</section>
+
+<!-- PAGE WRAPPER -->
+<div class="page-wrapper">
+
+    <!-- INTRO -->
+    <section class="section">
+        <h2>ようこそ – Welcome to Your Japanese Journey</h2>
+        <p>
+            この無料コースでは、まったくの初心者から上級者、そして古典日本語（文語）まで、
+            日本語を体系的に学ぶことができます。
+        </p>
+        <p>
+            日本語の学習は、単なる言語習得ではなく、日本文化・歴史・思考の理解にもつながります。
+            日本迷宮の美しい世界観とともに、ゆっくりと学んでいきましょう。
+        </p>
+    </section>
+
+    <!-- COURSE ROADMAP -->
+    <section class="section alt">
+        <h3>学習ロードマップ – Course Roadmap</h3>
+        <p>以下のステップに沿って進めることで、自然に日本語力が向上します。</p>
+
+        <div class="discover-grid">
+
+            <a href="intro.html" class="discover-card">
+                <h3>入門 – Beginner (Pre‑N5)</h3>
+                <p>ひらがな、カタカナ、発音、基本文法、最初の20漢字。</p>
+            </a>
+
+            <a href="n5.html" class="discover-card">
+                <h3>JLPT N5</h3>
+                <p>基礎文法・語彙・漢字。最初の会話力を身につける。</p>
+            </a>
+
+            <a href="n4.html" class="discover-card">
+                <h3>JLPT N4</h3>
+                <p>日常会話レベルの文法と語彙を習得。</p>
+            </a>
+
+            <a href="n3.html" class="discover-card">
+                <h3>JLPT N3</h3>
+                <p>中級文法・読解力・自然な日本語表現。</p>
+            </a>
+
+            <a href="n2.html" class="discover-card">
+                <h3>JLPT N2</h3>
+                <p>高度な文法・語彙・ニュースレベルの読解。</p>
+            </a>
+
+            <a href="n1.html" class="discover-card">
+                <h3>JLPT N1</h3>
+                <p>最上級レベル。学術的文章・高度な語彙。</p>
+            </a>
+
+            <a href="classical.html" class="discover-card">
+                <h3>古典日本語 – Classical Japanese</h3>
+                <p>文語文法、古語、歴史的仮名遣い、古典文学の読み方。</p>
+            </a>
+
+            <a href="writing.html" class="discover-card">
+                <h3>書き方 – Writing Systems</h3>
+                <p>漢字の歴史、書道、仮名の成り立ち、筆順。</p>
+            </a>
+
+            <a href="culture.html" class="discover-card">
+                <h3>文化と言語 – Culture & Language</h3>
+                <p>敬語、方言、日本人の話し方の特徴。</p>
+            </a>
+
+            <a href="practice.html" class="discover-card">
+                <h3>練習 – Practice Library</h3>
+                <p>短編、会話、読解、ミニテスト。</p>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- ABOUT LANGUAGE -->
+    <section class="section">
+        <h3>日本語とは？ – What Makes Japanese Unique</h3>
+        <p>
+            日本語は、音の美しさ、敬語体系、漢字文化、そして四季や自然を反映した豊かな表現が特徴です。
+            また、現代語だけでなく、古典日本語（文語）を学ぶことで、日本の文学や歴史書を原文で読むことができます。
+        </p>
+        <p>
+            このコースでは、実用的な現代日本語と、文化的価値の高い古典日本語の両方を扱います。
+        </p>
+    </section>
+
+</div>
+
+<footer>
+    <p>© 2026 日本迷宮 – Nihon Meikyū</p>
+</footer>
+
+<!-- ===== JAPANESE FLOWER ENGINE (THEME-AWARE VERSION) ===== -->
+<script>
+// Map months (0–11) to seasonal primary flowers
+const seasonalFlowers = [
+    "tsubaki", "tsubaki", "ume", "sakura", "sakura", "ajisai",
+    "himawari", "himawari", "cosmos", "kiku", "kiku", "ume"
+];
+
+// Page-based secondary flower
+function getPageFlower() {
+    return "sakura"; // default for course pages
+}
+
+// Flower definitions
+const flowerTypes = {
+    sakura:  { color: "#f9c4d2", darkColor: "#d8a8c0", sizeMin: 0.6, sizeMax: 1.2, shape: "circle" },
+    ume:     { color: "#f7e9f0", darkColor: "#d6c8d8", sizeMin: 0.6, sizeMax: 1.1, shape: "circle" },
+    tsubaki: { color: "#c0392b", darkColor: "#8a2a20", sizeMin: 0.7, sizeMax: 1.3, shape: "round" },
+    fuji:    { color: "#b39ddb", darkColor: "#8e7cc4", sizeMin: 0.5, sizeMax: 1.0, shape: "teardrop" },
+    ajisai:  { color: "#8faadc", darkColor: "#6f88b8", sizeMin: 0.4, sizeMax: 0.9, shape: "cluster" },
+    himawari:{ color: "#f4d03f", darkColor: "#c9a82f", sizeMin: 0.5, sizeMax: 1.0, shape: "oval" },
+    kiku:    { color: "#f5c469", darkColor: "#c9a257", sizeMin: 0.5, sizeMax: 1.0, shape: "spiky" },
+    cosmos:  { color: "#f1948a", darkColor: "#c67a72", sizeMin: 0.5, sizeMax: 1.0, shape: "circle" }
+};
+
+// Create a single flower
+function createFlower(typeKey) {
+    const type = flowerTypes[typeKey] || flowerTypes.sakura;
+    const flower = document.createElement("div");
+    flower.classList.add("flower");
+
+    flower.style.left = Math.random() * 100 + "vw";
+    const scale = type.sizeMin + Math.random() * (type.sizeMax - type.sizeMin);
+    flower.style.transform = `scale(${scale})`;
+
+    const theme = document.documentElement.getAttribute("data-theme");
+    flower.style.background = theme === "dark" ? type.darkColor : type.color;
+
+    flower.style.setProperty("--rotation", Math.random() * 360 + "deg");
+    flower.style.animationDuration = (4 + Math.random() * 6) + "s";
+    flower.style.opacity = 0.4 + Math.random() * 0.6;
+
+    if (Math.random() < 0.08) flower.classList.add("glow");
+
+    document.body.appendChild(flower);
+    setTimeout(() => flower.remove(), 10000);
+}
+
+// Engine
+(function startFlowerEngine() {
+    const month = new Date().getMonth();
+    const seasonal = seasonalFlowers[month] || "sakura";
+    const pageFlower = getPageFlower();
+
+    function spawnNormal() {
+        const type = Math.random() < 0.7 ? seasonal : pageFlower;
+        createFlower(type);
+    }
+
+    function spawnGust() {
+        const count = 3 + Math.floor(Math.random() * 5);
+        for (let i = 0; i < count; i++) {
+            const keys = Object.keys(flowerTypes);
+            const randomExtra = keys[Math.floor(Math.random() * keys.length)];
+            const pool = [seasonal, pageFlower, randomExtra];
+            const type = pool[Math.floor(Math.random() * pool.length)];
+            setTimeout(() => createFlower(type), i * 120);
+        }
+    }
+
+    setInterval(() => {
+        Math.random() < 0.18 ? spawnGust() : spawnNormal();
+    }, 450);
+})();
+</script>
+
+</body>
+</html>

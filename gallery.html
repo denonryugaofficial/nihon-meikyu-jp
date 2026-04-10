@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ギャラリー – 日本迷宮</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- GLOBAL THEME LOADER -->
+<script>
+(function() {
+    const saved = localStorage.getItem("theme") || "light";
+    document.documentElement.setAttribute("data-theme", saved);
+})();
+</script>
+
+<header>
+    <a href="index.html" class="logo">日本迷宮</a>
+    <nav>
+        <a href="famous.html">有名な場所</a>
+        <a href="hidden.html">秘境・穴場</a>
+        <a href="gallery.html">ギャラリー</a>
+        <a href="about.html">日本について</a>
+    </nav>
+</header>
+
+<section class="hero gallery-hero">
+    <div class="hero-text">
+        <h1>ギャラリー</h1>
+        <p>日本の美しさを写真で巡る。</p>
+    </div>
+</section>
+
+<div class="content-wrapper gallery-wrapper">
+
+    <!-- SHRINES -->
+    <section class="section">
+        <h2>神社・寺院</h2>
+        <div class="gallery-grid">
+            <img loading="lazy" src="images/gallery/shrines/shrine1.jpg" alt="Shrine" class="gallery-img fade-in">
+            <img loading="lazy" src="images/gallery/shrines/shrine2.jpg" alt="Shrine" class="gallery-img fade-in">
+            <img loading="lazy" src="images/gallery/shrines/shrine3.jpg" alt="Shrine" class="gallery-img fade-in">
+            <img loading="lazy" src="images/gallery/shrines/shrine4.jpg" alt="Shrine" class="gallery-img fade-in">
+            <img loading="lazy" src="images/gallery/shrines/shrine5.jpg" alt="Shrine" class="gallery-img fade-in">
+        </div>
+    </section>
+
+    <!-- NATURE -->
+    <section class="section alt">
+        <h2>自然・風景</h2>
+        <div class="gallery-grid">
+            <img loading="lazy" src="images/gallery/nature/nature1.jpg" alt="Nature" class="gallery-img fade-in">
+            <img loading="lazy" src="images/gallery/nature/nature2.jpg" alt="Nature" class="gallery-img fade-in">
+            <img loading="lazy" src="images/gallery/nature/nature3.jpg" alt="Nature" class="gallery-img fade-in">
+            <img loading="lazy" src="images/gallery/nature/nature4.jpg" alt="Nature" class="gallery-img fade-in">
+            <img loading="lazy" src="images/gallery/nature/nature5.jpg" alt="Nature" class="gallery-img fade-in">
+        </div>
+    </section>
+
+    <!-- CITIES -->
+    <section class="section">
+        <h2>街並み・都市</h2>
+        <div class="gallery-grid">
+            <img loading="lazy" src="images/gallery/cities/city1.jpg" alt="City" class="gallery-img fade-in">
+            <img loading="lazy" src="images/gallery/cities/city2.jpg" alt="City" class="gallery-img fade-in">
+            <img loading="lazy" src="images/gallery/cities/city3.jpg" alt="City" class="gallery-img fade-in">
+            <img loading="lazy" src="images/gallery/cities/city4.jpg" alt="City" class="gallery-img fade-in">
+            <img loading="lazy" src="images/gallery/cities/city5.jpg" alt="City" class="gallery-img fade-in">
+        </div>
+    </section>
+
+    <!-- CULTURE -->
+    <section class="section alt">
+        <h2>文化・伝統</h2>
+        <div class="gallery-grid">
+            <img loading="lazy" src="images/gallery/culture/culture1.jpg" alt="Culture" class="gallery-img fade-in">
+            <img loading="lazy" src="images/gallery/culture/culture2.jpg" alt="Culture" class="gallery-img fade-in">
+            <img loading="lazy" src="images/gallery/culture/culture3.jpg" alt="Culture" class="gallery-img fade-in">
+            <img loading="lazy" src="images/gallery/culture/culture4.jpg" alt="Culture" class="gallery-img fade-in">
+            <img loading="lazy" src="images/gallery/culture/culture5.jpg" alt="Culture" class="gallery-img fade-in">
+        </div>
+    </section>
+
+    <!-- FOOD -->
+    <section class="section">
+        <h2>食文化</h2>
+        <div class="gallery-grid">
+            <img loading="lazy" src="images/gallery/food/food1.jpg" alt="Food" class="gallery-img fade-in">
+            <img loading="lazy" src="images/gallery/food/food2.jpg" alt="Food" class="gallery-img fade-in">
+            <img loading="lazy" src="images/gallery/food/food3.jpg" alt="Food" class="gallery-img fade-in">
+            <img loading="lazy" src="images/gallery/food/food4.jpg" alt="Food" class="gallery-img fade-in">
+            <img loading="lazy" src="images/gallery/food/food5.jpg" alt="Food" class="gallery-img fade-in">
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>© 2026 日本迷宮 – Nihon Meikyū</p>
+</footer>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <span class="arrow left">&#10094;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <span class="arrow right">&#10095;</span>
+</div>
+
+<script>
+// ===== THEME SYSTEM =====
+
+// Show popup only on first visit
+window.addEventListener("DOMContentLoaded", () => {
+    const popup = document.getElementById("theme-popup");
+    const toggle = document.getElementById("theme-toggle");
+
+    const saved = localStorage.getItem("theme");
+
+    if (!saved) {
+        if (popup) popup.style.display = "flex";
+    } else {
+        if (toggle) toggle.style.display = "flex";
+    }
+
+    // Popup buttons
+    const lightBtn = document.getElementById("light-choice");
+    const darkBtn = document.getElementById("dark-choice");
+
+    if (lightBtn) {
+        lightBtn.onclick = () => setTheme("light", popup, toggle);
+        darkBtn.onclick = () => setTheme("dark", popup, toggle);
+    }
+
+    // Floating toggle
+    const toggleLight = document.getElementById("toggle-light");
+    const toggleDark = document.getElementById("toggle-dark");
+
+    if (toggleLight) toggleLight.onclick = () => setTheme("light");
+    if (toggleDark) toggleDark.onclick = () => setTheme("dark");
+});
+
+function setTheme(mode, popup, toggle) {
+    document.documentElement.setAttribute("data-theme", mode);
+    localStorage.setItem("theme", mode);
+
+    if (popup) popup.style.display = "none";
+    if (toggle) toggle.style.display = "flex";
+}
+
+
+
+// ===== LIGHTBOX =====
+const images = document.querySelectorAll('.gallery-img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('.close');
+const leftArrow = document.querySelector('.arrow.left');
+const rightArrow = document.querySelector('.arrow.right');
+
+let currentIndex = 0;
+
+function openLightbox(index) {
+    currentIndex = index;
+    lightbox.style.display = 'flex';
+    lightboxImg.src = images[currentIndex].src;
+}
+
+images.forEach((img, index) => {
+    img.addEventListener('click', () => openLightbox(index));
+});
+
+closeBtn.addEventListener('click', () => lightbox.style.display = 'none');
+
+leftArrow.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+});
+
+rightArrow.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+});
+
+document.addEventListener('keydown', (e) => {
+    if (lightbox.style.display === 'flex') {
+        if (e.key === 'ArrowLeft') leftArrow.click();
+        if (e.key === 'ArrowRight') rightArrow.click();
+        if (e.key === 'Escape') lightbox.style.display = 'none';
+    }
+});
+
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.style.display = 'none';
+});
+
+
+
+// ===== JAPANESE FLOWER ENGINE (THEME-AWARE VERSION) =====
+
+// Map months (0–11) to seasonal primary flowers
+const seasonalFlowers = [
+    "tsubaki","tsubaki","ume","sakura","sakura","ajisai",
+    "himawari","himawari","cosmos","kiku","kiku","ume"
+];
+
+// Page-based secondary flower
+function getPageFlower() {
+    const path = window.location.pathname;
+    if (path.includes("famous")) return "kiku";
+    if (path.includes("hidden")) return "fuji";
+    if (path.includes("gallery")) return "ajisai";
+    if (path.includes("about")) return "ume";
+    return "sakura";
+}
+
+// Flower definitions (with darkColor variants)
+const flowerTypes = {
+    sakura:  { color: "#f9c4d2", darkColor: "#d8a8c0", sizeMin: 0.6, sizeMax: 1.2, shape: "circle" },
+    ume:     { color: "#f7e9f0", darkColor: "#d6c8d8", sizeMin: 0.6, sizeMax: 1.1, shape: "circle" },
+    tsubaki: { color: "#c0392b", darkColor: "#8a2a20", sizeMin: 0.7, sizeMax: 1.3, shape: "round" },
+    fuji:    { color: "#b39ddb", darkColor: "#8e7cc4", sizeMin: 0.5, sizeMax: 1.0, shape: "teardrop" },
+    ajisai:  { color: "#8faadc", darkColor: "#6f88b8", sizeMin: 0.4, sizeMax: 0.9, shape: "cluster" },
+    himawari:{ color: "#f4d03f", darkColor: "#c9a82f", sizeMin: 0.5, sizeMax: 1.0, shape: "oval" },
+    kiku:    { color: "#f5c469", darkColor: "#c9a257", sizeMin: 0.5, sizeMax: 1.0, shape: "spiky" },
+    cosmos:  { color: "#f1948a", darkColor: "#c67a72", sizeMin: 0.5, sizeMax: 1.0, shape: "circle" }
+};
+
+// Create a single flower element
+function createFlower(typeKey) {
+    const type = flowerTypes[typeKey] || flowerTypes.sakura;
+    const flower = document.createElement("div");
+    flower.classList.add("flower");
+
+    // Random horizontal start
+    flower.style.left = Math.random() * 100 + "vw";
+
+    // Depth / size
+    const scale = type.sizeMin + Math.random() * (type.sizeMax - type.sizeMin);
+    flower.style.transform = `scale(${scale})`;
+
+    // THEME-AWARE COLOR
+    const theme = document.documentElement.getAttribute("data-theme");
+    flower.style.background = theme === "dark" ? (type.darkColor || type.color) : type.color;
+
+    // Rotation
+    flower.style.setProperty("--rotation", Math.random() * 360 + "deg");
+
+    // Duration
+    flower.style.animationDuration = (4 + Math.random() * 6) + "s";
+
+    // Opacity
+    flower.style.opacity = 0.4 + Math.random() * 0.6;
+
+    // Rare glow
+    if (Math.random() < 0.08) {
+        flower.classList.add("glow");
+    }
+
+    // Shape variations
+    switch (type.shape) {
+        case "oval": flower.style.borderRadius = "50% 35% 50% 35%"; break;
+        case "teardrop": flower.style.borderRadius = "50% 50% 50% 10%"; break;
+        case "round": flower.style.borderRadius = "50%"; break;
+        case "spiky": flower.style.boxShadow = `0 0 0 2px ${type.color}`; break;
+        case "cluster": flower.style.boxShadow = `-4px -2px 0 ${type.color}, 4px 2px 0 ${type.color}`; break;
+        default: flower.style.borderRadius = "50%";
+    }
+
+    document.body.appendChild(flower);
+
+    setTimeout(() => flower.remove(), 10000);
+}
+
+// Main engine
+(function startFlowerEngine() {
+    const month = new Date().getMonth();
+    const seasonal = seasonalFlowers[month] || "sakura";
+    const pageFlower = getPageFlower();
+
+    function spawnNormal() {
+        const useSeasonal = Math.random() < 0.7;
+        const type = useSeasonal ? seasonal : pageFlower;
+        createFlower(type);
+    }
+
+    function spawnGust() {
+        const count = 3 + Math.floor(Math.random() * 5);
+        for (let i = 0; i < count; i++) {
+            const keys = Object.keys(flowerTypes);
+            const randomExtra = keys[Math.floor(Math.random() * keys.length)];
+            const pool = [seasonal, pageFlower, randomExtra];
+            const type = pool[Math.floor(Math.random() * pool.length)];
+            setTimeout(() => createFlower(type), i * 120);
+        }
+    }
+
+    setInterval(() => {
+        const gust = Math.random() < 0.18;
+        gust ? spawnGust() : spawnNormal();
+    }, 450);
+})();
+document.querySelectorAll('.gallery-img').forEach(img => {
+    if (img.complete) {
+        img.classList.add('loaded');
+    } else {
+        img.addEventListener('load', () => {
+            img.classList.add('loaded');
+        });
+    }
+});
+document.querySelectorAll('.gallery-img').forEach(img => {
+    if (img.complete) {
+        img.classList.add('loaded');
+    } else {
+        img.addEventListener('load', () => {
+            img.classList.add('loaded');
+        });
+    }
+});
+</script>
+
+</body>
+</html>
